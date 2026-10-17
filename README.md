@@ -22,19 +22,21 @@ and a browser: Google Chrome, or run `npx playwright install chrome`.
 
 ## Cloud sessions (claude.ai/code)
 
-`.claude/settings.json` declares both marketplaces and enables both plugins, so every
-cloud session opened on **this** repository gets them automatically. It also points
-Playwright MCP at the Chromium preinstalled in the cloud container
+Cloud containers start from scratch every session, and project settings alone do not install
+plugins there. Install them from the cloud environment's **Setup script** instead (environment
+menu in the session title bar → Edit → Setup script): paste the contents of
+[`scripts/cloud-setup.sh`](scripts/cloud-setup.sh).
+
+It installs both plugins at user scope, so they work in every repository that uses that
+environment. It also points Playwright MCP at the Chromium preinstalled in the container
 (`/opt/pw-browsers/chromium`), because the default Google Chrome is not installed there.
 
-To get the same in another repository, copy `.claude/settings.json` into it, or add the
-three `PLAYWRIGHT_MCP_*` variables from that file to the cloud environment's
-environment variables.
+This repository must be readable from the session: either public, or attached to the session.
+A cloud session only has GitHub access to its own repositories, so with a private `skillsinst`
+the Game Studio install fails in sessions on other repositories (Playwright still installs).
 
 ## Known limitations
 
 - `sprite-pipeline` hands image generation to an `imagegen` skill that exists in Codex but
   not in Claude. Its sprite normalization and preview scripts (`scripts/*.py`, need Pillow)
   work; generating new images needs a separate image-generation tool.
-- The `PLAYWRIGHT_MCP_EXECUTABLE_PATH` in `.claude/settings.json` only exists in the cloud
-  container. If you open this repository in local Claude Code, remove the `env` block.
