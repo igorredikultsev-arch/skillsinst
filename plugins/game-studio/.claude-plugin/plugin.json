@@ -1,0 +1,12 @@
+{
+  "name": "game-studio",
+  "version": "0.1.2",
+  "description": "Design, prototype, and ship browser games with guided 2D and 3D workflows (Phaser, Three.js, React Three Fiber), asset pipelines, and playtesting support.",
+  "author": {
+    "name": "OpenAI",
+    "url": "https://github.com/openai/plugins"
+  },
+  "repository": "https://github.com/openai/plugins",
+  "license": "MIT",
+  "keywords": ["games", "phaser", "threejs", "react-three-fiber", "gltf", "rapier", "webgl", "sprites", "playtest"]
+}

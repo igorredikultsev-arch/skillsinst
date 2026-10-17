@@ -1,0 +1,25 @@
+{
+  "env": {
+    "PLAYWRIGHT_MCP_BROWSER": "chromium",
+    "PLAYWRIGHT_MCP_EXECUTABLE_PATH": "/opt/pw-browsers/chromium",
+    "PLAYWRIGHT_MCP_HEADLESS": "true"
+  },
+  "extraKnownMarketplaces": {
+    "skillsinst": {
+      "source": {
+        "source": "github",
+        "repo": "igorredikultsev-arch/skillsinst"
+      }
+    },
+    "claude-plugins-official": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-plugins-official"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "game-studio@skillsinst": true,
+    "playwright@claude-plugins-official": true
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "skillsinst",
+  "owner": {
+    "name": "igorredikultsev-arch"
+  },
+  "metadata": {
+    "description": "Personal Claude Code plugin marketplace."
+  },
+  "plugins": [
+    {
+      "name": "game-studio",
+      "description": "Design, prototype, and ship browser games with guided 2D and 3D workflows, asset pipelines, and playtesting support. Ported from OpenAI's Game Studio plugin.",
+      "version": "0.1.2",
+      "category": "development",
+      "source": "./plugins/game-studio"
+    }
+  ]
+}
