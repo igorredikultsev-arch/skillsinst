@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Setup script for a claude.ai/code cloud environment.
-# Installs Game Studio and Playwright for every session in that environment.
+# Installs Game Studio, Playwright and Founder skill for every session in that environment.
 # Failures only print a warning so a broken install never blocks the session from starting.
 set -uo pipefail
 
@@ -12,8 +12,12 @@ claude plugin marketplace add igorredikultsev-arch/skillsinst \
 claude plugin marketplace add anthropics/claude-plugins-official \
   || claude plugin marketplace update claude-plugins-official \
   || warn "could not add the claude-plugins-official marketplace"
+claude plugin marketplace add Jakeschincariol/founder-skill \
+  || claude plugin marketplace update founder-skill \
+  || warn "could not add the founder-skill marketplace"
 claude plugin install game-studio@skillsinst || warn "game-studio not installed"
 claude plugin install playwright@claude-plugins-official || warn "playwright not installed"
+claude plugin install founder-skill@founder-skill || warn "founder-skill not installed"
 
 # The cloud container has Chromium, not Google Chrome, which Playwright MCP uses by default.
 python3 - <<'PY' || warn "could not write Playwright settings"

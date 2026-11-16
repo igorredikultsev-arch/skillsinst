@@ -6,6 +6,7 @@ A personal Claude Code plugin marketplace.
 | --- | --- | --- |
 | `game-studio` | 9 skills for browser games: stack choice, Phaser 2D, Three.js, React Three Fiber, 3D asset pipeline, game UI, sprite pipeline, playtesting | Ported from [OpenAI Game Studio](https://github.com/openai/plugins/tree/main/plugins/game-studio) (MIT), see `plugins/game-studio/NOTICE.md` |
 | `playwright` | Browser automation MCP server by Microsoft | Not copied here: comes from the official [`claude-plugins-official`](https://github.com/anthropics/claude-plugins-official) marketplace |
+| `founder-skill` | 11 skills that test a business before launch: board (Hormozi/Thiel/Jobs), competitors, consumer panel of 100 buyer agents, pricing, offer, CFO, marketing, brand, ops, launch, plan | Not copied here: [Jakeschincariol/founder-skill](https://github.com/Jakeschincariol/founder-skill) (MIT) |
 
 ## Install in local Claude Code
 
@@ -15,6 +16,9 @@ A personal Claude Code plugin marketplace.
 
 /plugin marketplace add anthropics/claude-plugins-official
 /plugin install playwright@claude-plugins-official
+
+/plugin marketplace add Jakeschincariol/founder-skill
+/plugin install founder-skill@founder-skill
 ```
 
 Restart Claude Code afterwards. Playwright needs Node.js (it runs `npx @playwright/mcp@latest`)
